@@ -3,37 +3,47 @@ html, body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #828282; 
-  font-size: 18px;
+ 
 }
 
 #save-image-mobile {
-  font-size: 34px; 
+  font-size: 44px; 
   background:#828282; 
-  color:white;
+  color:white; 
+  position: absolute;
+  bottom: 40px; 
 } 
 
 #menu-open{
- font-size: 34px; 
+ font-size: 44px; 
   background:#828282; 
-  color:white; 
+  color:white;  
+   padding: 10px 50px;
+  position: absolute;
+  bottom:40px;
 }
 
 button.random {
   background: magenta;
+} 
+
+#type{
+  width: 80%;
 }
 
 input[type=range] {
-  height: 22px;
+  height: 12px;
   -webkit-appearance: none;
-  margin: 10px 0;
+  margin: 0px 0;
   width: 100%;
 }
+
 input[type=range]:focus {
   outline: none;
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 5px;
+  height: 4px;
   cursor: pointer;
   animate: 0.2s;
   box-shadow: 0px 0px 0px #000000;
@@ -57,13 +67,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 input[type=range]::-moz-range-track {
   width: 100%;
-  height: 5px;
+  height: 4px;
   cursor: pointer;
   animate: 0.2s;
   box-shadow: 0px 0px 0px #000000;
   background: #D9D9D9;
   border-radius: 0px;
   border: 0px solid #000000;
+  
 }
 input[type=range]::-moz-range-thumb {
   box-shadow: 0px 0px 0px #808080;
@@ -121,13 +132,13 @@ input{
   background-color: grey;
   border: none;
   color: white;
-  padding: 15px 15px;
+  padding: 8px 8px;
   width: 120px;
   text-align: left !important;
   text-decoration: none;
   display: inline-block;
-  font-size: 18px;
-  margin: 4px 2px;
+  font-size: 14px;
+  margin: 0px 0px;
   cursor: pointer;
 }
 
@@ -138,13 +149,13 @@ input{
   border: none;
   color: white;
   fill: green; 
-  padding: 8px 0px;
-  width: 100px;
+  padding: 0px 0px;
+  width: 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 12px;
+  margin: 0px 0px;
   cursor: pointer;
 }
 
@@ -152,6 +163,7 @@ input{
 #menu {
   position: fixed;
   z-index: 1;
+  margin-bottom:50px;
 }
 
 /* Display menu items in a vertical-stacked flexbox */
@@ -166,14 +178,14 @@ input{
 
 .menu-section label {
   color: rgb(128,128,128);
-  text-size: 15px;
+  font-size: 14px;
 }
 
 /* Spacing for menu items */
 .menu-section input,
 .menu-section select,
 .menu-section button {
-  margin-bottom: 1.7em;
+  margin-bottom: 1.0em;
 }
 
 /* Hide mobile menu buttons by default */
@@ -199,7 +211,37 @@ input{
 /* --- Settings for mobile mode with an arbitrary breakpoint --- */
 
 @media screen and (max-width: 1024px) { 
-  /* adjust the menu styling so it becomes a slide-up menu */
+  /* adjust the menu styling so it becomes a slide-up menu */ 
+  
+
+  .button {
+    font-size:30px; 
+    width:240px;
+  }  
+  
+  
+#type{
+  width: 100%;
+  font-size: 40px; 
+}
+  
+  input[type=range] {
+
+  width: 100%;
+}
+  
+  input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #808080;
+  border: 0px solid #808080;
+  height: 46px;
+  width: 46px;
+  border-radius: 50px;
+  background: #808080;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -23px;
+}
+  
   #menu {
     width: 100%;
     height: 36vh;
@@ -207,21 +249,33 @@ input{
     background-color:#121212dd;
     overflow-y:scroll;
     justify-content: center;
-    padding: 25px 0;
+    padding: 25px 0; 
+    margin-bottom:200px !important;
     
     /* Hide this off-screen at the bottom by default */
     transform: translateY(100vh);
   }
   /* limit the size of menu items in the box and center it 
      horizontally with auto margins */
+ 
+  
+  .slider {
+    padding-bottom: 350px ;
+    padding-top: 50px;
+    margin-bottom:200px;
+  }
+  
   .menu-section {
     width: 85vw;
     overflow-y:scroll;
-    margin: auto auto;
+    margin: auto auto; 
+    height: 120vh; 
   }
   .menu-section label {
     color: white;
-    text-size: 15px;
+    font-size: 27px;
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
   input[type="slider"] {
     width: 100%; /* 100% of the .menu-section width */ 
@@ -252,6 +306,7 @@ input{
     top: 0;
     right: 0;
     color: white;
+    font-size:45px;
   }
 }
 
@@ -260,11 +315,11 @@ input{
  /* Small amount of animation code for the hidden mobile menu */
 @keyframes slideup {
   from {transform: translateY(100vh);}
-  to {transform: translateY(60vh);}
+  to {transform: translateY(65vh);}
 }
 
 @keyframes slidedown {
-  from {transform: translateY(60vh);}
+  from {transform: translateY(65vh);}
   to {transform: translateY(100vh);}
 }
 

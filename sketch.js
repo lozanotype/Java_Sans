@@ -62,14 +62,17 @@ function preload(){
   caslon = loadFont('36days-Light.ttf');
 
   
-}
+} 
+
+
 
 function setup() {
- 
+
   createCanvas(windowWidth, windowHeight); 
   textAlign(CENTER, CENTER);
 frameRate(30)
 pixelDensity(1) 
+   
   
    button = select("#randomizer");
    button.mousePressed(changeColors); 
@@ -213,8 +216,13 @@ function changeColors() {
   // ri = random(rimage);
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+} 
+
 
 function draw() { 
+  
   
   
   let wval = wslider.value();
@@ -440,6 +448,7 @@ function saveJPG() {
 //     recording = true
 //   }
 // }
+
 
 
 
